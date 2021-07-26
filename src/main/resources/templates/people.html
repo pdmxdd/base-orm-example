@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<form method="post" action="/">
+    <label>First Name: <input type="text" id="firstName" name="firstName"></label>
+    <label>Last Name: <input type="text" id="lastName" name="lastName"></label>
+    <input type="submit" value="Submit">
+</form>
+<h2>People:</h2>
+<th:block th:each="person : ${people}">
+    <ul>
+        <li th:text="${person.getId()}"></li>
+        <li th:text="${person.getFirstName()}"></li>
+        <li th:text="${person.getLastName()}"></li>
+    </ul>
+</th:block>
+</body>
+</html>
